@@ -7,11 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(getWinNumbers()));
-        System.out.println(Arrays.toString(getUserNumbers()));
+        isWin(getUserNumbers(), getWinNumbers());
     }
 
-
+    //pobieranie liczb od usera
     private static Integer[] getUserNumbers() {
         Integer[] numbers = new Integer[6];
         Scanner scanner = new Scanner(System.in);
@@ -40,18 +39,46 @@ public class Main {
 
         }
 
-
+        Arrays.sort(numbers);
         return numbers;
     }
 
+    //losowanie wygranych
     private static Integer[] getWinNumbers() {
-        Integer[] nubmers = new Integer[49];
+        Integer[] numbers = new Integer[49];
+        Integer[] winNumbers;
 
-        for (int i = 0; i < nubmers.length; i++) {
-            nubmers[i] = i + 1;
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i + 1;
         }
 
-        Collections.shuffle(Arrays.asList(nubmers));
-        return nubmers;
+        Collections.shuffle(Arrays.asList(numbers));
+        winNumbers = Arrays.copyOf(numbers, 6);
+        return winNumbers;
+    }
+
+    //sprawdzanie trafienia
+    private static void isWin(Integer[] userNumbers, Integer[] winNumbers) {
+        int count = 0;
+
+        for (int userNumber : userNumbers) {
+            for (int winNumber : winNumbers) {
+                if (userNumber == winNumber)
+                    count++;
+            }
+        }
+        switch (count) {
+            case 1:
+                System.out.println("trafiweś 1 liczbę");
+                break;
+            case 2: case 3: case 4:
+                System.out.println("trefiweś " + count + " liczby");
+                break;
+            case 5: case 6:
+                System.out.println("trefiweś " + count + " liczb");
+                break;
+            default:
+                System.out.println("nie trafiweś");
+        }
     }
 }
