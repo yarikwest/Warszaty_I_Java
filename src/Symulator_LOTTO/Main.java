@@ -69,16 +69,16 @@ public class Main {
         }
         switch (count) {
             case 1:
-                System.out.println("trafiweś 1 liczbę");
+                System.out.println("trafiłeś 1 liczbę");
                 break;
             case 2: case 3: case 4:
-                System.out.println("trefiweś " + count + " liczby");
+                System.out.println("trafiłeś " + count + " liczby");
                 break;
             case 5: case 6:
-                System.out.println("trefiweś " + count + " liczb");
+                System.out.println("trafiłeś " + count + " liczb");
                 break;
             default:
-                System.out.println("nie trafiweś");
+                System.out.println("nie trafiłeś");
         }
     }
 }
