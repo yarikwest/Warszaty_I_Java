@@ -16,17 +16,26 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         String url = "http://www.onet.pl/";
         String fileName = "popular_words.txt";
         String filterFileName = "filtered_popular_words.txt";
-        Path path = getPath(fileName);
-        Path pathFilter = getPath(filterFileName);
         String[] tab;
         String[] filterTab = {"oraz", "ponieważ", "tylko", "znów", "cały", "jako"};
+        Path path = null, pathFilter = null;
+
+        //get files "popular_words.txt" and "filtered_popular_words.txt"
+        try {
+            path = getPath(fileName);
+            pathFilter = getPath(filterFileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
 
         //write to "popular_words.txt"
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+
             for (Element elem : getTitles(url)) {
                 tab = elem.text().replaceAll("[^a-zA-Z0-9ąćęłńóśźż ]", "").split(" ");
                 for (String word : tab) {
