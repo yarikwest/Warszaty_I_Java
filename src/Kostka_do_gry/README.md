@@ -1,4 +1,4 @@
-#Kostka do gry
+# Kostka do gry
 
 **W grach planszowych i papierowych RPG używa się wielu rodzajów kostek do gry, nie tylko tych dobrze znanych, sześciennych. Jedną z popularniejszych kości jest np. kostka dziesięciościenna, a nawet stuścienna!**
 

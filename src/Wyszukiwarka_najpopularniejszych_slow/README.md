@@ -1,6 +1,6 @@
 # Wyszukiwarka najpopularniejszych słów
 
-###Zaimportowano do projektu bibliotekę jsoup, można ją pobrać z adresu: https://jsoup.org/download
+### Zaimportowano do projektu bibliotekę jsoup, można ją pobrać z adresu: https://jsoup.org/download
 
 **Program wyszukuje w popularnych serwisach internetowych nagłówków artykułów, a następnie zapiszuje pojedyncze słowa w nich występujące do pliku o nazwie ``popular_words.txt``.**
     Działanie programu:
