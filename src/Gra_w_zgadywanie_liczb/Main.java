@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int random = new Random().nextInt(100);
+        int random = new Random().nextInt(100)+1 // zakres od 1 do 100;
         int liczba;
 
         do {
