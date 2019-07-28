@@ -9,7 +9,7 @@ public class Main {
 
     static int dropCubs(String str) {
         int result = 0;
-        int amount, cub, value;
+        int amount, cub;
         Random random = new Random();
         String[] tab = {"1", "0", "0"};
         String[] drop = str.split("[D,+,-]");
@@ -21,16 +21,15 @@ public class Main {
         }
         amount = Integer.parseInt(tab[0]);
         cub = Integer.parseInt(tab[1]);
-        value = Integer.parseInt(tab[2]);
 
         while (amount > 0) {
             result += random.nextInt(cub)+1;
             amount--;
         }
         if (str.contains("+"))
-            result += value;
+            result += Integer.parseInt(tab[2]);
         else if (str.contains("-"))
-            result -= value;
+            result -= Integer.parseInt(tab[2]);
 
         return result;
     }
